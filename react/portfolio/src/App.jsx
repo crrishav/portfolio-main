@@ -20,15 +20,25 @@ function App() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     document.querySelectorAll(".animate-on-scroll").forEach((el) => {
       observer.observe(el);
     });
 
-    // Custom Scroll Snapping Logic
+    // Scroll Progress Indicator (removed)
+    // No longer needed as per user request
+
+    // Custom Scroll Snapping Logic (disabled on mobile)
     const handleWheel = (e) => {
+      // Check if it's a mobile device
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+      
+      if (isMobile) {
+        return; // Don't apply custom scroll behavior on mobile
+      }
+      
       if (scrollLocked.current) {
         e.preventDefault();
         return;
@@ -76,7 +86,7 @@ function App() {
           </div>
 
           <div className="links">
-            <a href="https://github.com/GGRISHAV" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/crrishav" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github"></i> GitHub
             </a>
             <a href="https://instagram.com/crrishav" target="_blank" rel="noopener noreferrer">
@@ -86,43 +96,47 @@ function App() {
 
           <div className="scroll-hint">
             <p>My Projects</p>
-            <div className="arrow">⬇️</div>
+            <div className="arrow">↓</div>
           </div>
         </div>
       </section>
 
       <section className="fullscreen-section" id="projects" ref={projectsRef}>
-        <div className="projects-section animate-up">
-          <h2 className="section-heading animate-on-scroll animate-delay-1">My Projects</h2>
+        {/* My Projects title is at the top-center */}
+        <h2 className="section-heading animate-on-scroll animate-delay-1">My Projects</h2>
 
-          <div className="projects-grid">
-            <ProjectCard
-              title="Flutter Calculator"
-              description="A simple yet fully functional calculator app built using Flutter. It features a custom BounceButton widget, haptic feedback, and a dedicated settings page for customization."
-              link="https://github.com/GGRISHAV/flutter-calculator"
-              delayClass="animate-delay-2"
-            />
+        <div className="projects-grid">
+          <ProjectCard
+            title="Next-Gen Calculator"
+            description="A futuristic calculator with smooth animations and advanced features."
+            link="https://github.com/GGRISHAV/flutter-calculator"
+            imageUrl="https://images.unsplash.com/photo-1587145820266-a5951ee6f670?auto=format&fit=crop&q=80&w=600"
+            delayClass="animate-delay-2"
+          />
 
-            <ProjectCard
-              title="Instaclone"
-              description="A work-in-progress Instagram clone built with Flutter. The project aims to replicate core features of the original app, focusing on UI and essential functionality."
-              link="https://github.com/GGRISHAV/instaclone"
-              delayClass="animate-delay-3"
-            />
+          <ProjectCard
+            title="Social Feed Pro"
+            description="A highly aesthetic and responsive social media feed application."
+            link="https://github.com/GGRISHAV/instaclone"
+            imageUrl="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600"
+            delayClass="animate-delay-3"
+          />
 
-            <ProjectCard
-              title="Coming soon.."
-              description="Work in progress"
-              delayClass="animate-delay-4"
-            />
-          </div>
-
-          <p className="source-code animate-on-scroll animate-delay-5">
-            <a href="https://github.com/GGRISHAV/portfolio" target="_blank" rel="noopener noreferrer">
-              Source Code
-            </a>
-          </p>
+          <ProjectCard
+            title="Creative Portfolio"
+            description="A premium portfolio template designed for developers and designers."
+            link="https://github.com/GGRISHAV/portfolio"
+            imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
+            delayClass="animate-delay-4"
+          />
         </div>
+
+        {/* Source Code text at the bottom center */}
+        <p className="source-code animate-on-scroll animate-delay-5">
+          <a href="https://github.com/crrishav/portfolio-main" target="_blank" rel="noopener noreferrer">
+            Source Code
+          </a>
+        </p>
       </section>
     </>
   );
