@@ -89,7 +89,7 @@ function App() {
             <a href="https://github.com/crrishav" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github"></i> GitHub
             </a>
-            <a href="https://instagram.com/crrishav" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/crrishavv/" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram"></i> Instagram
             </a>
           </div>
@@ -107,27 +107,19 @@ function App() {
 
         <div className="projects-grid">
           <ProjectCard
-            title="Next-Gen Calculator"
-            description="A futuristic calculator with smooth animations and advanced features."
-            link="https://github.com/GGRISHAV/flutter-calculator"
-            imageUrl="https://images.unsplash.com/photo-1587145820266-a5951ee6f670?auto=format&fit=crop&q=80&w=600"
+            title="Freelancing Platform"
+            description="A high-fidelity freelance marketplace ecosystem featuring a React web platform and a Flutter mobile application. Focused on elite user experience, it utilizes GSAP and Lenis for buttery-smooth scroll physics and complex interface animations."
+            link="https://github.com/omthapa779/gig"
+            imageUrl="/Gig.PNG"
             delayClass="animate-delay-2"
           />
 
           <ProjectCard
-            title="Social Feed Pro"
-            description="A highly aesthetic and responsive social media feed application."
-            link="https://github.com/GGRISHAV/instaclone"
-            imageUrl="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600"
+            title="Job Bot"
+            description="An automated lead-generation tool built with Python and SQLite. It leverages the feedparser library to monitor Reddit RSS feeds in real-time, using a custom weighted-scoring algorithm to identify and alert high-value freelance opportunities via Discord Webhooks."
+            link="https://github.com/crrishav/job-bot"
+            imageUrl="/Bot.PNG"
             delayClass="animate-delay-3"
-          />
-
-          <ProjectCard
-            title="Creative Portfolio"
-            description="A premium portfolio template designed for developers and designers."
-            link="https://github.com/GGRISHAV/portfolio"
-            imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
-            delayClass="animate-delay-4"
           />
         </div>
 
